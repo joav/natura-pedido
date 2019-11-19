@@ -10,7 +10,9 @@ export class CustomersService {
   add(customer:Customer) {
     if(this.customers.filter(c => c.name.toLowerCase() == customer.name.toLowerCase()).length == 0){
       this.customers.push(customer);
+      return true;
     }
+    return false;
   }
 
 }

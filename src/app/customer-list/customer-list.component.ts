@@ -3,6 +3,7 @@ import { Customer } from '../models/customer';
 import { ProductService } from '../product.service';
 import { CustomersService } from '../customers.service';
 import { TabsService } from '../tabs.service';
+import { DbService } from '../db.service';
 
 @Component({
   selector: 'app-customer-list',
@@ -15,7 +16,7 @@ export class CustomerListComponent implements OnInit {
     name: ''
   };
 
-  constructor(public pService:ProductService, public cService:CustomersService, private tabs:TabsService) {
+  constructor(public pService:ProductService, public cService:CustomersService, private tabs:TabsService, private db:DbService) {
     this.cService.currentCustomer = {name: ''};
   }
 
@@ -24,6 +25,9 @@ export class CustomerListComponent implements OnInit {
 
   add(){
     this.cService.add(this.customer);
+    this.db.add('customers', this.customer).subscribe( c => {
+      console.log(c);
+    });
     this.customer = {
       name: ''
     };

@@ -11,11 +11,12 @@ import { TabsService } from './tabs.service';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CustomersService } from './customers.service';
 import { CustomerListComponent } from './customer-list/customer-list.component';
+import { DbService } from './db.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ AppComponent, HelloComponent, FooterNavComponent, AddProductComponent, ProductListComponent, CustomerListComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [ProductService, TabsService, CustomersService]
+  providers: [ProductService, TabsService, CustomersService, DbService]
 })
 export class AppModule { }

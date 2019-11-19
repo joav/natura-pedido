@@ -5,4 +5,5 @@ export interface Product {
   price:string;
   points:number;
   customer:Customer;
+  id:any;
 }
