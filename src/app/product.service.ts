@@ -1,32 +1,33 @@
 import { Injectable } from '@angular/core';
 import { Product } from './models/product';
 import { Customer } from './models/customer';
+import { CustomersService } from './customers.service'
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
   products:Product[] = [];
-  constructor() { }
+  constructor(private cService:CustomersService) { }
 
   add(product:Product){
     this.products.push(product);
   }
   /// Filtrar por customer
   total() {
-    return this.products.reduce((last:number,current:Product) => last + +current.price, 0)
+    return this.filter().reduce((last:number,current:Product) => last + +current.price, 0)
   }
 
   totalPoints() {
-    return this.products.reduce((last:number,current:Product) => last + +current.points, 0)
+    return this.filter().reduce((last:number,current:Product) => last + +current.points, 0)
   }
 
-  countProducts(customer:Customer = null){
-    return this.products.filter(p => p.customer.name.toLowerCase() == customer.name.toLowerCase()).length;
+  countProducts(c:Customer){
+    return this.products.filter(p => p.customer.name.toLowerCase() == c.name.toLowerCase()).length;
   }
 
-  filter(c:Customer = null){
-    return c && c.name?this.products.filter(p => p.customer.name.toLowerCase() == c.name.toLowerCase()):this.products;
+  filter(){
+    return this.cService.currentCustomer && this.cService.currentCustomer.name?this.products.filter(p => p.customer.name.toLowerCase() == this.cService.currentCustomer.name.toLowerCase()):this.products;
   }
 
 }

@@ -7,7 +7,7 @@
     <td>Cliente</td>
   </thead>
   <tbody>
-    <tr *ngFor="let product of pService.filter(cService.currentCustomer)">
+    <tr *ngFor="let product of pService.filter()">
       <td class="code">{{product.code}}</td>
       <td class="desc">{{product.desc}}</td>
       <td class="price">{{product.price}}</td>
