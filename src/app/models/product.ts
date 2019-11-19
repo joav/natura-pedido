@@ -3,5 +3,6 @@ export interface Product {
   code:string;
   desc:string;
   price:string;
+  points:number;
   customer:Customer;
 }

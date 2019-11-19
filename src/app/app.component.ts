@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TabsService } from './tabs.service'
 
 @Component({
   selector: 'my-app',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   name = 'Angular';
+  constructor(public tabs:TabsService){}
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TabsService } from '../tabs.service';
 
 @Component({
   selector: 'app-footer-nav',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterNavComponent implements OnInit {
 
-  constructor() { }
+  constructor(public tabs:TabsService) { }
 
   ngOnInit() {
   }

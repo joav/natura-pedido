@@ -6,3 +6,10 @@
 html, body{
   height: 100%
 }
+div.btn{
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  border: 0.5px solid black;
+  cursor: pointer;
+}

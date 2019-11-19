@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <td>Código</td>
+    <td>Descripción</td>
+    <td>Precio</td>
+    <td>Puntos</td>
+    <td>Cliente</td>
+  </thead>
+  <tr *ngFor="let product of pService.products">
+    <td class="code">{{product.code}}</td>
+    <td class="desc">{{product.desc}}</td>
+    <td class="price">{{product.price}}</td>
+    <td class="price">{{product.points}}</td>
+    <td class="customer">{{product.customer.name}}</td>
+  </tr>
+</table>
