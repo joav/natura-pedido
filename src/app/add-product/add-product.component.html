@@ -6,7 +6,7 @@
 <label for="price">Precio de venta</label>
 <input type="text" name="price" placeholder="Valor de venta" [(ngModel)]="product.price">
 <label for="points">Puntos del producto</label>
-<input type="phone" min="0" name="points" placeholder="Puntos" [(ngModel)]="product.points">
+<input type="tel" min="0" name="points" placeholder="Puntos" [(ngModel)]="product.points">
 <label for="customer">Nombre del cliente</label>
 <input type="text" name="customer" placeholder="Cliente" [(ngModel)]="customer.name">
 <div (click)="add()" class="btn">Agregar</div>
