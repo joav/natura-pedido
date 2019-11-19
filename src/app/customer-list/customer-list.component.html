@@ -1,6 +1,10 @@
+<h3>Agregar Cliente</h3>
 <input type="text" name="name" [(ngModel)]="customer.name" placeholder="Nombre del cliente">
 <div (click)="add()" class="btn">Agregar</div>
 
-<ul>
-  <li *ngFor="let customer of cService.customers"  (click)="addProduct(customer)">{{customer.name}} - {{pService.countProducts(customer)}} productos</li>
-</ul>
+<ng-container *ngIf="cService.customers.length">
+  <h3>Lista de clientes</h3>
+  <ul>
+    <li *ngFor="let customer of cService.customers"  (click)="addProduct(customer)">{{customer.name}} - {{pService.countProducts(customer)}} productos</li>
+  </ul>
+</ng-container>
