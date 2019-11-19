@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TabsService } from './tabs.service'
+import { CustomersService } from './customers.service'
 
 @Component({
   selector: 'my-app',
@@ -8,5 +9,6 @@ import { TabsService } from './tabs.service'
 })
 export class AppComponent  {
   name = 'Angular';
-  constructor(public tabs:TabsService){}
+  constructor(public tabs:TabsService, public cService:CustomersService){
+  }
 }

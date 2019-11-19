@@ -1,3 +1,4 @@
 <app-footer-nav></app-footer-nav>
-<app-add-product *ngIf="tabs.creationActive"></app-add-product>
+<app-customer-list *ngIf="tabs.customersActive"></app-customer-list>
+<app-add-product *ngIf="tabs.creationActive" [customer]="cService.currentCustomer"></app-add-product>
 <app-product-list *ngIf="tabs.listActive"></app-product-list>

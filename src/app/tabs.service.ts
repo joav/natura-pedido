@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class TabsService {
   customersActive = false;
-  creationActive = false;
-  listActive = true;
+  creationActive = true;
+  listActive = false;
   constructor() { }
 
   change({ customersActive = false, creationActive = false, listActive = false}){

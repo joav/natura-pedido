@@ -13,3 +13,8 @@ div.btn{
   border: 0.5px solid black;
   cursor: pointer;
 }
+input{
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}

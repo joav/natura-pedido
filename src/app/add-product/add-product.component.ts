@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Customer } from '../models/customer';
 import { Product } from '../models/product';
 import { ProductService } from '../product.service'
+import { CustomersService } from '../customers.service'
 
 @Component({
   selector: 'app-add-product',
@@ -10,21 +11,21 @@ import { ProductService } from '../product.service'
 })
 export class AddProductComponent implements OnInit {
 
-  @Input() customer:Customer = {name: ''};
+  @Input('customer') customer:Customer = {name: ''};
   product:Product = {
     code: '',
     desc: '',
     price: '',
-    points: 0,
-    customer: this.customer
+    points: 0
   }
-  constructor(private service:ProductService) {}
+  constructor(private pService:ProductService, private cService:CustomersService) {}
 
   ngOnInit() {
   }
 
   add(){
-    this.service.add(this.product);
+    this.pService.add(this.product);
+    this.cService.add(this.customer)
     const customer:Customer = {name: ''};
     const product:Product = {
       code: '',

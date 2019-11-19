@@ -8,3 +8,7 @@ td {
 thead{
   font-weight: bold;
 }
+tfoot td:first-child{
+  text-align: right;
+  font-weight: bold;
+}
