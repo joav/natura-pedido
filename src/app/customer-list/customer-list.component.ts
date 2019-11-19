@@ -15,7 +15,9 @@ export class CustomerListComponent implements OnInit {
     name: ''
   };
 
-  constructor(public pService:ProductService, public cService:CustomersService, private tabs:TabsService) { }
+  constructor(public pService:ProductService, public cService:CustomersService, private tabs:TabsService) {
+    this.cService.currentCustomer = {name: ''};
+  }
 
   ngOnInit() {
   }
@@ -30,6 +32,11 @@ export class CustomerListComponent implements OnInit {
   addProduct(c:Customer){
     this.cService.currentCustomer = c;
     this.tabs.change({creationActive: true})
+  }
+
+  viewProducts(c:Customer) {
+    this.cService.currentCustomer = c;
+    this.tabs.change({listActive: true})
   }
 
 }

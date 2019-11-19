@@ -12,7 +12,7 @@ export class ProductService {
   add(product:Product){
     this.products.push(product);
   }
-
+  /// Filtrar por customer
   total() {
     return this.products.reduce((last:number,current:Product) => last + +current.price, 0)
   }
@@ -23,6 +23,10 @@ export class ProductService {
 
   countProducts(customer:Customer = null){
     return this.products.filter(p => p.customer.name.toLowerCase() == customer.name.toLowerCase()).length;
+  }
+
+  filter(c:Customer = null){
+    return c && c.name?this.products.filter(p => p.customer.name.toLowerCase() == c.name.toLowerCase()):this.products;
   }
 
 }

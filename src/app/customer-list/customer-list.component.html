@@ -5,6 +5,6 @@
 <ng-container *ngIf="cService.customers.length">
   <h3>Lista de clientes</h3>
   <ul>
-    <li *ngFor="let customer of cService.customers"  (click)="addProduct(customer)">{{customer.name}} - {{pService.countProducts(customer)}} productos</li>
+    <li *ngFor="let customer of cService.customers"><span>{{customer.name}} - {{pService.countProducts(customer)}} productos</span><span><a (click)="addProduct(customer)" href="javascript:;">Añadir</a><a (click)="viewProducts(customer)" href="javascript:;">Ver</a></span></li>
   </ul>
 </ng-container>
